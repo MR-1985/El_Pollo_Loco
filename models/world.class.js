@@ -38,6 +38,13 @@ class World {
         })
     };
 
+    runEnemies() {
+
+        this.enemies.forEach(enemy => {
+            enemy.updateEnemies();
+        })
+    }
+
     draw() {
 
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
@@ -52,6 +59,7 @@ class World {
         requestAnimationFrame(function () {
             self.draw();
             self.runClouds();
+            self.runEnemies();
         })
     };
 
