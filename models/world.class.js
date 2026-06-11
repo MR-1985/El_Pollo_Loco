@@ -24,12 +24,19 @@ class World {
 
     canvas;
     ctx;
+    keybord;
 
-    constructor(canvas) {
+    constructor(canvas, keybord) {
         this.ctx = canvas.getContext('2d');
         this.canvas = canvas;
+        this.keybord = keybord;
         this.draw();
+        this.setWorld();
     };
+
+    setWorld() {
+        this.character.world = this;
+    }
 
     runClouds() {
 
